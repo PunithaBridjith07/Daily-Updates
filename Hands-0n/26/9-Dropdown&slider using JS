@@ -1,0 +1,211 @@
+<!-- DropDown HTML -->
+
+<li class="trip">
+    <a href="" id="trip">Trip</a>
+    <ul class="trip-content">
+        <li><a href="https://example.com/leisure-travel" target="_blank">Leisure Travel</a></li>
+        <li><a href="https://example.com/business-travel" target="_blank">Business Travel</a></li>
+        <li><a href="https://example.com/adventure-travel" target="_blank">Adventure Travel</a></li>
+        <li><a href="https://example.com/ecotourism" target="_blank">Ecotourism</a></li>
+        <li><a href="https://example.com/cruise-travel" target="_blank">Cruise Travel</a></li>
+        <li><a href="https://example.com/road-trips" target="_blank">Road Trips</a></li>
+        <li><a href="https://example.com/luxury-travel" target="_blank">Luxury Travel</a></li>
+        <li><a href="https://example.com/sustainable-travel" target="_blank">Sustainable Travel</a></li>
+    </ul>
+</li>
+
+
+<!-- DropDown CSS-->
+<style>
+    .trip>a {
+        color: #34485c;
+        cursor: pointer;
+        text-decoration: none;
+
+    }
+
+    .trip li {
+        display: block;
+    }
+
+    .trip .trip-content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        background-color: #34485c;
+        height: 400px;
+        width: 1150px;
+        top: 100px;
+        border-left: 2px solid #34485c;
+        border-bottom: 6px solid #34485c;
+        border-right: 2px solid #34485c;
+        border-radius: 0 0 30px 30px;
+        left: 100px;
+
+        &::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        &::-webkit-scrollbar-track {
+            border: 2px solid #34485c;
+            /* border-radius: 50px; */
+            border-bottom-right-radius: 50px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgb(221, 221, 221);
+            border: 1px solid white;
+            border-radius: 50px;
+        }
+    }
+
+    .trip:hover .trip-content {
+        gap: 70px;
+        padding: 0 0 0 50px;
+        display: grid;
+        /* flex-direction: row; */
+        grid-template-columns: 300px 300px 300px;
+        overflow: auto;
+    }
+</style>
+
+
+<!-- Slider Using HTML and JS -->
+
+<div class="banner">
+    <button id="prev"><span style="opacity: 100%;">&#11164;</span></button>
+    <button id="next"><span style="opacity: 100%;">&#11166;</span></button>
+    <div class="tours">
+        <div class="tour active" style="z-index: 8;">
+            <img src="./Trip-images/Leisure Travel/link-hoang-UoqAR2pOxMo-unsplash.jpg" alt="Leisure Travel">
+            <div class="banner-highlights">
+                <div class="tour-cards">
+                    <img src="./Trip-images/Leisure Travel/roman-kraft-g_gwdpsCVAY-unsplash.jpg" alt="roman-kraft">
+                    <div>
+                        <h2>Roman-Kraft: A Creative Oasis</h2>
+                        <p>
+                            Discover the harmonious blend of classic elegance and contemporary design, where
+                            lush
+                            greenery meets stunning architecture. This serene escape inspires creativity and
+                            reflection,
+                            making it the perfect haven for thinkers and creators.</p>
+                    </div>
+                </div>
+                <div class="tour-cards">
+                    <img src="./Trip-images/Leisure Travel/rebe-adelaida-zunQwMy5B6M-unsplash.jpg" alt="rebe-adelaida">
+                    <div>
+                        <h2>Rebe-Adelaida: A Hidden Gem</h2>
+                        <p>
+                            Experience the enchanting blend of vibrant culture and serene landscapes, where
+                            every
+                            corner
+                            invites exploration and inspiration.</p>
+                    </div>
+                </div>
+                <div class="tour-cards">
+                    <img src="./Trip-images/Leisure Travel/luca-bravo-ny6qxqv_m04-unsplash.jpg" alt="luca-bravo">
+                    <div>
+                        <h2>Luca-Bravo: Nature’s Canvas</h2>
+                        <p>
+                            Experience stunning vistas where lush greenery meets dramatic cliffs, creating a
+                            perfect
+                            backdrop for adventure. The harmonious blend of vibrant culture and serene
+                            landscapes
+                            invites exploration at every turn. Uncover hidden gems that inspire and rejuvenate
+                            the
+                            soul.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tour" style="z-index: 7;">
+            <img src="./Trip-images/Business Travel/campaign-creators-gMsnXqILjp4-unsplash.jpg" alt="Business Travel">
+            <div class="banner-highlights">
+                <div class="tour-cards">
+                    <img src="./Trip-images/Leisure Travel/roman-kraft-g_gwdpsCVAY-unsplash.jpg" alt="roman-kraft">
+                    <div>
+                        <h2>Roman-Kraft: A Creative Oasis</h2>
+                        <p>
+                            Discover the harmonious blend of classic elegance and contemporary design, where
+                            lush
+                            greenery meets stunning architecture. This serene escape inspires creativity and
+                            reflection,
+                            making it the perfect haven for thinkers and creators.</p>
+                    </div>
+                </div>
+                <div class="tour-cards">
+                    <img src="./Trip-images/Leisure Travel/rebe-adelaida-zunQwMy5B6M-unsplash.jpg" alt="rebe-adelaida">
+                    <div>
+                        <h2>Rebe-Adelaida: A Hidden Gem</h2>
+                        <p>
+                            Experience the enchanting blend of vibrant culture and serene landscapes, where
+                            every
+                            corner
+                            invites exploration and inspiration.</p>
+                    </div>
+                </div>
+                <div class="tour-cards">
+                    <img src="./Trip-images/Leisure Travel/luca-bravo-ny6qxqv_m04-unsplash.jpg" alt="luca-bravo">
+                    <div>
+                        <h2>Luca-Bravo: Nature’s Canvas</h2>
+                        <p>
+                            Experience stunning vistas where lush greenery meets dramatic cliffs, creating a
+                            perfect
+                            backdrop for adventure. The harmonious blend of vibrant culture and serene
+                            landscapes
+                            invites exploration at every turn. Uncover hidden gems that inspire and rejuvenate
+                            the
+                            soul.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Slider's JS -->
+
+<script>
+    let next = document.querySelector('#next');
+    let prev = document.querySelector('#prev');
+    let tours = document.querySelectorAll('.tour');
+    let currentIndex = 0;
+
+    function showTour(index) {
+        // Hide all tours
+        tours.forEach(tour => {
+            tour.classList.remove('active', 'slide-left', 'slide-right');
+        });
+        // Set the current tour as active
+        tours[index].classList.add('active');
+    }
+    // Handle next button click
+    next.addEventListener('click', function () {
+        // Slide out the current tour
+        tours[currentIndex].classList.add('slide-left');
+        // Update current index
+        currentIndex = (currentIndex + 1) % tours.length;
+        // Show the next tour
+        showTour(currentIndex);
+        // Add the slide-in animation to the new active tour
+        tours[currentIndex].classList.remove('slide-left', 'slide-right');
+        tours[currentIndex].classList.add('slide-right');
+    });
+    // Handle previous button click
+    prev.addEventListener('click', function () {
+        // Slide out the current tour
+        tours[currentIndex].classList.add('slide-right');
+        // Update current index
+        currentIndex = (currentIndex - 1 + tours.length) % tours.length;
+        // Show the previous tour
+        showTour(currentIndex);
+        // Add the slide-in animation to the new active tour
+        tours[currentIndex].classList.remove('slide-left', 'slide-right');
+        tours[currentIndex].classList.add('slide-left');
+    });
+    // Initial display
+    showTour(currentIndex);
+</script>
