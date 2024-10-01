@@ -1,0 +1,25 @@
+/* Never type 
+
+Never type is not use to assign value.Never type is immutable type.Used while handling errors & loop in function or etc.
+*/
+
+
+
+type Role = 'admin' | 'user' | 'guest';
+
+const authorize = (role: Role): string => {
+    switch (role) {
+        case 'admin':
+            return 'You can do anything';
+        case 'user':
+            return 'You can do something';
+        case 'guest':
+            return 'You can do something';
+        default:
+            // never reach here util we add a new role
+            const _unreachable: never = role;
+            throw new Error(`Invalid role: ${_unreachable}`);
+    }
+};
+
+console.log(authorize('guest'));
