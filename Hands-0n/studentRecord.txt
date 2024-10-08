@@ -1,0 +1,171 @@
+interface StudentData {
+    id: number;
+    name: string | undefined;
+    department: string;
+    marks: { mark1: number, mark2: number, mark3: number };
+    passed: number;
+    fail: number;
+    average: number;
+    rank: number;
+    studentAbout: string;
+}
+
+abstract class StudentRecord {
+    protected record: StudentData[] = [];
+    protected headCount: number = 0;
+    protected id: number;
+    protected name: string | undefined;
+    protected department: string;
+    protected marks: { mark1: number, mark2: number, mark3: number } = { mark1: 0, mark2: 0, mark3: 0 };
+    protected passed: number = 0;
+    protected fail: number = 0;
+    protected average: number = 0;
+    protected rank: number = 0;
+    protected studentAbout: string;
+
+    constructor(name: string | undefined, department: string, mark1: number, mark2: number, mark3: number, about: string) {
+        this.name = name;
+        this.department = department;
+        this.marks.mark1 = mark1;
+        this.marks.mark2 = mark2;
+        this.marks.mark3 = mark3;
+        this.studentAbout = about;
+        this.setPass();
+        this.setFail();
+        this.setRank();
+    }
+    abstract giveReason(): string | undefined;
+    public status(): void;
+
+    status() {
+        console.log("Successfully Displayed");
+    }
+    private setPass() {
+        Object.values(this.marks).map((mark) => mark >= 50 ? this.passed++ : this.passed);
+    }
+    private setFail() {
+        Object.values(this.marks).map((mark) => mark < 50 ? this.fail++ : this.fail);
+    }
+    private setRank() {
+        this.record.map(record => {
+            let totalMarks: number = record.marks.mark1 + record.marks.mark2 + record.marks.mark3;
+            record.average = totalMarks / 3;
+        });
+        this.record.sort((a, b) => b.average - a.average);
+
+        this.record.map((record, index) => {
+            record.rank = index + 1;
+        });
+    }
+
+    getDetails(name: string | undefined) {
+        this.record.map((record) => record.name == name ? console.log(
+            `id : ${record.id}
+            Name : ${record.name}
+            Department : ${record.department}
+            Marks : ${record.marks.mark1}(mark1) | ${record.marks.mark2}(mark2) | ${record.marks.mark3}(mark3)
+            Pass : ${record.passed}
+            Fail : ${record.fail}
+            Rank : ${record.rank}
+            About : ${record.studentAbout}
+            ${this.fail ? `Reason : ${this.giveReason()}\n` : ''}
+            Status : ${record ? this.status() : '❌Problem on getDetails'}`) : "Name not matched");
+    }
+    getMarks(name: string | undefined) {
+        this.record.map((record) => record.name == name ? console.log(`\nMark1 : ${record.marks.mark1}\nMark2 : ${record.marks.mark2}\nMark3 : ${record.marks.mark3}\n\nRank : ${record.rank}`) : 'Please ensure the NAME or DATA ADDED')
+    }
+}
+
+class addStudentData extends StudentRecord {
+
+    constructor(
+        name: string | undefined,
+        department: string,
+        mark1: number, mark2: number, mark3: number,
+        studentAbout: string, private reason?: string | undefined) {
+        super(
+            name,
+            department,
+            mark1, mark2, mark3,
+            studentAbout);
+        this.id++;
+        this.marks;
+        this.passed,
+            this.fail,
+            this.rank,
+            this.addToRecord();
+        this.giveReason();
+    }
+    giveReason() {
+        return this.reason;
+    }
+    status() {
+        console.log("Successfully Added");
+    }
+    public addToRecord() {
+        let dataColected: StudentData = {
+            id : addStudentData.prototype.id,
+            name: this.name,
+            department: this.department,
+            marks: this.marks,
+            passed: this.passed,
+            fail: this.fail,
+            average: this.average,
+            rank: this.rank,
+            studentAbout: this.studentAbout
+        };
+        this.record.push(dataColected);
+    }
+
+}
+
+let getInput = require('prompt-sync')();
+
+let student;
+let nameOfStudent: string | undefined;
+let studentDepartment: string;
+let mark1: string;
+let mark2: string
+let mark3: string
+let studentAbout: string;
+let reason: string;
+
+let action: string;
+
+while (action = getInput('Action : ')) {
+    if (action != '/') {
+        if (action == '+') {
+            nameOfStudent = getInput("Student Name: ");
+            studentDepartment = getInput("Student Department: ");
+            mark1 = getInput("Mark1: ");
+            mark2 = getInput("Mark2: ");
+            mark3 = getInput("Mark3: ");
+            studentAbout = getInput("students' description : ");
+            reason = getInput("student reason : ");
+            student = new addStudentData(nameOfStudent, studentDepartment, Number(mark1), Number(mark2), Number(mark3), studentAbout, reason);
+            if (student) {
+                student.status();
+            }
+            continue;
+        }
+        if (action == 'getDetails') {
+            if (student) {
+                student.getDetails(getInput("Enter name to get data : "));
+            } else {
+                console.log("\nPlease add data to display record\n")
+            }
+            continue;
+        }
+        if (action == 'getMarks') {
+            if (student) {
+                student.getMarks(getInput("Enter name to get marks : "));
+            } else {
+                console.log("\nPlease add data to display data\n")
+            }
+            continue;
+        }
+    }
+    else {
+        break;
+    }
+}
