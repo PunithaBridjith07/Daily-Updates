@@ -1,0 +1,27 @@
+
+
+<header>
+    <nav>
+        <div class="logo">
+            <img src="../assets/Logos/Logo.svg" alt="logo">
+        </div>
+        <ul class="menu">
+            <li class="trip">
+                <a href="" id="trip">Trip</a>
+                <ul class="trip-content">
+                    <li *ngFor="let trip of tripList"><img src={{trip.img}} alt=""><a href="https://example.com/leisure-travel" target="_blank">{{trip.tripType}}</a></li>
+                </ul>
+            </li>
+            <li class="hotels">
+                <a href="">Hotels</a>
+            </li>
+            <li class="about">
+                <a href="">About us</a>
+            </li>
+        </ul>
+        <div class="authen">
+            <button>Register</button>
+            <a href="">Log in</a>
+        </div>
+    </nav>
+</header>
