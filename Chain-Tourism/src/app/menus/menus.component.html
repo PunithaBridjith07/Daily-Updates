@@ -1,5 +1,3 @@
-
-
 <header>
     <nav>
         <div class="logo">
@@ -7,9 +5,10 @@
         </div>
         <ul class="menu">
             <li class="trip">
-                <a href="" id="trip">Trip</a>
+                <a href="">Trip</a>
                 <ul class="trip-content">
-                    <li *ngFor="let trip of tripList"><img src={{trip.img}} alt=""><a href="https://example.com/leisure-travel" target="_blank">{{trip.tripType}}</a></li>
+                    <li *ngFor="let tour of Tours"><img src={{tour.image}} alt={{tour.tourType}}><a
+                            href="https://example.com/leisure-travel" target="_blank">{{tour.tourType}}</a></li>
                 </ul>
             </li>
             <li class="hotels">

@@ -1,10 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
-*{
-    margin: 0;
-    /* overflow: auto;
-    font-family: 'Roboto', Josefin Sans;
+main {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: static;
+    margin-top: 10px;
+    padding: 0 50px;
+    height: 1350px;
 
     &::-webkit-scrollbar {
+        height: 100%;
         width: 15px;
     }
 
@@ -15,5 +18,5 @@
     &::-webkit-scrollbar-thumb {
         background: #34485c;
         border-radius: 50px;
-    } */
+    }
 }

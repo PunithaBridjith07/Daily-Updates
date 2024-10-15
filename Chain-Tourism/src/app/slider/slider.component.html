@@ -1,0 +1,32 @@
+<div class="banner">
+    <button id="prev"><span (click)="handlePrev($event)">&#11164;</span></button>
+    <button id="next"><span (click)="handleNext($event)">&#11166;</span></button>
+    <ul class="tours">
+        <li class="tour {{toursBanner[selectedTourBanner].status}}">
+            <img src={{toursBanner[selectedTourBanner].bannerImage}} alt={{toursBanner[selectedTourBanner].bannerName}}>
+            <ul class="banner-highlights">
+                <li class="tour-cards">
+                    <img src={{toursBanner[selectedTourBanner].bannerCardOne.imageUrl}} alt={{toursBanner[selectedTourBanner].bannerCardOne.cardName}}>
+                    <div>
+                        <h2>{{toursBanner[selectedTourBanner].bannerCardOne.cardHeading}}</h2>
+                        <p>{{toursBanner[selectedTourBanner].bannerCardOne.cardDescription}}</p>
+                    </div>
+                </li>
+                <li class="tour-cards">
+                    <img src={{toursBanner[selectedTourBanner].bannerCardTwo.imageUrl}} alt={{toursBanner[selectedTourBanner].bannerCardTwo.cardName}}>
+                    <div>
+                        <h2>{{toursBanner[selectedTourBanner].bannerCardTwo.cardHeading}}</h2>
+                        <p>{{toursBanner[selectedTourBanner].bannerCardTwo.cardDescription}}</p>
+                    </div>
+                </li>
+                <li class="tour-cards">
+                    <img src={{toursBanner[selectedTourBanner].bannerCardThree.imageUrl}} alt={{toursBanner[selectedTourBanner].bannerCardThree.cardName}}>
+                    <div>
+                        <h2>{{toursBanner[selectedTourBanner].bannerCardThree.cardHeading}}</h2>
+                        <p>{{toursBanner[selectedTourBanner].bannerCardThree.cardDescription}}</p>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

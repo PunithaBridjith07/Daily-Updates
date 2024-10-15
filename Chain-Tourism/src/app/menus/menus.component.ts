@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { tourType } from '../tourType';
 
 @Component({
   selector: 'chainTour-menus',
@@ -7,39 +8,43 @@ import { Component } from '@angular/core';
 })
 export class MenusComponent {
 
-  tripList = [
-    {
-      tripType :"Leisure Travel",
-      img : "/Chain-Tourism/src/assets/Trip-images/leisure Travel/leisure3.jpg"
-    },
-    {
-      tripType : "Business Travel",
-      img:"/Chain-Tourism/src/assets/Trip-images/Business Travel/business3"
-    },
-    {
-      tripType : "Adventure Travel",
-      img : "/Chain-Tourism/src/assets/Trip-images/Adventure Travel/adventure3"
-    },
-    {
-      tripType : "Ecotourism Travel",
-      img : "/Chain-Tourism/src/assets/Trip-images/Ecotourism Travel/eco3"
-    },
-    {
-      tripType : "Cruise Travel",
-      img : "/Chain-Tourism/src/assets/Trip-images/Cruise Travel/cruise3"
-    },
-    {
-      tripType : "Road Trips",
-      img : "/Chain-Tourism/src/assets/Trip-images/Road Trips/road3"
-    },
-    {
-      tripType : "Luxury Travel",
-      img : "/Chain-Tourism/src/assets/Trip-images/Luxury Travel/luxury3"
-    },
-    {
-      tripType : "Sustainable Travel",
-      img : "/Chain-Tourism/src/assets/Trip-images/Sustainable Travel/sustainable3"
-    }
-  ]
+  Tours:tourType[] = []
+
+  ngOnInit(){
+    this.Tours = [
+      {
+        tourType :"Leisure Travel",
+        image : "../../assets/Leisure Travel/leisure3.jpg"
+      },
+      {
+        tourType : "Business Travel",
+        image:"../../assets/Business Travel/business3.jpg"
+      },
+      {
+        tourType : "Adventure Travel",
+        image : "../../assets/Adventure Travel/adventure3.jpg"
+      },
+      {
+        tourType : "Ecotourism Travel",
+        image : "../../assets/Ecotourism/eco3.jpg"
+      },
+      {
+        tourType : "Cruise Travel",
+        image : "../../assets/Cruise Travel/cruise3.jpg"
+      },
+      {
+        tourType : "Road Trips",
+        image : "../../assets/Road Trips/road3.jpg"
+      },
+      {
+        tourType : "Luxury Travel",
+        image : "../../assets/Luxury Travel/luxury3.jpg"
+      },
+      {
+        tourType : "Sustainable Travel",
+        image : "../../assets/Sustainable Travel/sustainable3.jpg"
+      }
+    ]
+  }
 
 }
