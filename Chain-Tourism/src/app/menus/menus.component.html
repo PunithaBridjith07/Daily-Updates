@@ -7,8 +7,12 @@
             <li class="trip">
                 <a href="">Trip</a>
                 <ul class="trip-content">
-                    <li *ngFor="let tour of Tours"><img src={{tour.image}} alt={{tour.tourType}}><a
-                            href="https://example.com/leisure-travel" target="_blank">{{tour.tourType}}</a></li>
+                    <li *ngFor="let tour of toursList">
+                        <img src={{tour.image}} alt={{tour.tourType}}>
+                        <a routerLink="selectedTour"
+                            (click)="modifySelectedTour($event,tour.tourType)">{{tour.tourType}}
+                        </a>
+                    </li>
                 </ul>
             </li>
             <li class="hotels">

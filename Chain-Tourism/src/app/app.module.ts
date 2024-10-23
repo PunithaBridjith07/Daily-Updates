@@ -6,13 +6,22 @@ import { AppComponent } from './app.component';
 import { MenusComponent } from './menus/menus.component';
 import { MainComponent } from './main/main.component';
 import { SliderComponent } from './slider/slider.component';
+import { TourBookComponent } from './tour-book/tour-book.component';
+import { TourAmenitiesComponent } from './tour-amenities/tour-amenities.component';
+import { TourSelectedComponent } from './tour-selected/tour-selected.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MenusComponent,
     MainComponent,
-    SliderComponent
+    SliderComponent,
+    TourSelectedComponent,
+    TourBookComponent,
+    TourAmenitiesComponent
+    // routingComponents
   ],
   imports: [
     BrowserModule,

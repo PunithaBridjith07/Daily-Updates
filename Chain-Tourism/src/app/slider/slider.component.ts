@@ -21,13 +21,13 @@ export class SliderComponent {
         cardDescription: "Discover the harmonious blend of classic elegance and contemporary design, where lush greenery meets stunning architecture.This serene escpe inspires creativity and reflection, making it the perfect haven for thinkers and creators."
       },
       bannerCardTwo: {
-        cardName: "roman-kraft",
+        cardName: "Rebe-Adelaida",
         imageUrl: "../../assets/Leisure Travel/leisure4.jpg",
         cardHeading: "Rebe-Adelaida: A Hidden Gem",
         cardDescription: "Experience the enchanting blend of vibrant culture and serene landscapes, where every corner invites exploration and inspiration."
       },
       bannerCardThree: {
-        cardName: "roman-kraft",
+        cardName: "Luca-Bravo",
         imageUrl: "../../assets/Leisure Travel/leisure3.jpg",
         cardHeading: "Luca-Bravo: Nature’s Canvas",
         cardDescription: "Experience stunning vistas where lush greenery meets dramatic cliffs, creating a perfect backdrop for adventure. The harmonious blend of vibrant culture and serene landscapes invites exploration at every turn. Uncover hidden gems that inspire and rejuvenate the soul."
@@ -56,7 +56,53 @@ export class SliderComponent {
         cardDescription: "A lone traveler approaches a rustic cabin nestled within a dense, verdant forest. The light filters through the trees, creating a sense of mystery and adventure. The traveler's backpack, a splash of bright orange, contrasts with the muted tones of the natural surroundings."
       },
       status: 'inactive'
-    }
+    },
+    {
+      bannerName: "Business Travel",
+      bannerImage: "../../assets/Business Travel/business1.jpg",
+      bannerCardOne: {
+        cardName: "The Co-Working Cafe",
+        imageUrl: "../../assets/Business Travel/business6.jpg",
+        cardHeading: "The Co-Working Cafe: Where Productivity Meets Collaboration",
+        cardDescription: "Experience the perfect blend of productivity and social connection at The Co-Working Cafe. Immerse yourself in a vibrant community of like-minded individuals, fueled by delicious coffee and a stimulating atmosphere. This is the ideal spot to work, network, and recharge."
+      },
+      bannerCardTwo: {
+        cardName: "Modern Office",
+        imageUrl: "../../assets/Business Travel/business2.jpg",
+        cardHeading: "Modern Office: A Hub of Innovation",
+        cardDescription: "Experience a vibrant and dynamic workspace, designed to foster collaboration and productivity. This modern office boasts cutting-edge technology, comfortable amenities, and a welcoming atmosphere, making it the ideal setting for success-driven individuals and teams."
+      },
+      bannerCardThree: {
+        cardName: "Modern Corporate Retreat",
+        imageUrl: "../../assets/Business Travel/business5.jpg",
+        cardHeading: "Productive Meetings in a Vibrant Space",
+        cardDescription: "Experience the perfect fusion of comfort and functionality in this inspiring modern corporate retreat. With its state-of-the-art facilities and ample natural light, this space fosters collaboration and innovation. Indulge in a productive environment that fuels creativity and efficiency, leaving you feeling refreshed and motivated."
+      },
+      status: 'inactive'
+    },
+    {
+      bannerName: "Luxury Travel",
+      bannerImage: "../../assets/Luxury Travel/luxury1.jpg",
+      bannerCardOne: {
+        cardName: "Zenith Retreat",
+        imageUrl: "../../assets/Luxury Travel/luxury3.jpg",
+        cardHeading: "Zenith Retreat: Where Tranquility Meets Luxury",
+        cardDescription: "Indulge in the epitome of refined living at Zenith Retreat, where breathtaking views meet impeccable service. Unwind in opulent suites, savor exquisite cuisine, and rejuvenate your senses with our world-class spa treatments. Immerse yourself in a sanctuary of luxury and peace."
+      },
+      bannerCardTwo: {
+        cardName: "Mountain-retreat",
+        imageUrl: "../../assets/Luxury Travel/luxury4.jpg",
+        cardHeading: "Mountain Retreat: Where Serenity Meets Luxury",
+        cardDescription: "Escape to a secluded haven nestled amidst majestic mountains, where breathtaking views and unparalleled comfort await. Immerse yourself in tranquility and indulge in the finest amenities, making this the ultimate luxury escape."
+      },
+      bannerCardThree: {
+        cardName: "Poolside-bliss",
+        imageUrl: "../../assets/Luxury Travel/luxury2.jpg",
+        cardHeading: "Poolside Bliss: A Day of Tranquility",
+        cardDescription: "Indulge in the ultimate relaxation at this luxurious poolside retreat. Sink into the comfort of a plush lounger, soak up the sun, and let the gentle sounds of water lull you into a state of serenity. This is the perfect escape for those seeking a moment of peace and rejuvenation."
+      },
+      status: 'inactive'
+    },
   ]
 
   handlePrev(e: Event) {
@@ -77,7 +123,7 @@ export class SliderComponent {
     }
   }
 
-  
+
 
 }
 

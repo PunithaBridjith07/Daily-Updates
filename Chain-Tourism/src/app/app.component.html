@@ -1,2 +1,4 @@
-<chainTour-menus></chainTour-menus>
-<chainTour-main></chainTour-main>
+<chainTour-menus style="width: 100vw;" [toursList]="TourList" (selectTour)="handleSelectingTour($event)"></chainTour-menus>
+<chainTour-main [toursList]="selectedTours"></chainTour-main>
+
+

@@ -1,10 +1,8 @@
 main {
-    overflow-x: hidden;
-    overflow-y: auto;
     position: static;
     margin-top: 10px;
     padding: 0 50px;
-    height: 1350px;
+    height: auto;
 
     &::-webkit-scrollbar {
         height: 100%;
