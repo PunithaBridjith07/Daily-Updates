@@ -1,0 +1,13 @@
+/* Write a function that counts the number of vowels in a given string. */
+
+
+function vowelsCount(data:string):void{
+    let vowels:string[] = ['a','e','i','o','u'];
+    let vowelsCount:number = 0;
+    let dataStored:string[] = data.split('');
+    dataStored.forEach((letter)=>vowels.indexOf(letter)!=-1 ? vowelsCount++ : vowelsCount);
+    console.log(`Vowels Count in string : ${vowelsCount}`);
+}
+
+let getInput = require('prompt-sync')();
+vowelsCount(getInput("Enter the String : "));

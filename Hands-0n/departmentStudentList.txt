@@ -1,0 +1,83 @@
+/* Write a function to search for a department by its department id/ department name, if department exists to return list  of students. */
+
+
+interface MajorRecord {
+    departmentId: number,
+    departmentName: string,
+    studentList: string[]
+}
+
+abstract class studentsMajorRecord {
+    static record: MajorRecord[] = [];
+    departmentId: number;
+    departmentName: string;
+    studentList: string[] = []
+
+    abstract status();
+
+    constructor(id: number, departmentName: string, ...student: string[]) {
+        this.departmentId = id;
+        this.departmentName = departmentName.toUpperCase();
+        this.studentList = student;
+        this.addData();
+    }
+
+    addData() {
+        let data: MajorRecord = {
+            departmentId: this.departmentId,
+            departmentName: this.departmentName,
+            studentList: this.studentList
+        }
+        studentsMajorRecord.record.push(data);
+        if (studentsMajorRecord.length != -1) {
+            console.log("Successfully Added Data");
+        }
+    }
+
+    getDepartmentStudentList(fetchRequest: (number | string)) {
+        studentsMajorRecord.record.map((record) => {
+            if (typeof fetchRequest === 'number') {
+                if (record.departmentId === fetchRequest) {
+                    console.log(`\nDepartment-id : ${record.departmentId}\nDepartment-Name : ${record.departmentName}${record.studentList.map((student, i) => ` \nstudent ${i + 1} : ${student}`)}`);
+                }
+            }
+            if (typeof fetchRequest === 'string') {
+                if (record.departmentName === fetchRequest.toUpperCase()) {
+                    console.log(`\nDepartment-id : ${record.departmentId}\nDepartment-Name : ${record.departmentName}${record.studentList.map((student, i) => ` \nstudent ${i + 1} : ${student}`)}`);
+                }
+            }
+        });
+    }
+
+}
+
+class studentDataAdder extends studentsMajorRecord {
+
+    constructor(id: number, departmentName: string, ...student: string[]) {
+        super(id, departmentName, ...student);
+    }
+
+    status() {
+        console.log("Record Fetched")
+    }
+}
+
+
+let department = new studentDataAdder(1, 'cse', 'Ram', 'Kumar', 'Pragadees', 'Karthi');
+
+department = new studentDataAdder(2, 'ECE', 'sukiz', 'Vijay')
+
+let getInput = require('prompt-sync')();
+let data: string;
+while (data = getInput("Enter to fetch data (or) stop command '/' :")) {
+    if (data != '/') {
+        if (typeof Number(data) === 'number') {
+            department.getDepartmentStudentList(Number(data));
+        }
+        if (typeof data === 'string') {
+            department.getDepartmentStudentList(data)
+        }
+    }else{
+        break;
+    }
+}
