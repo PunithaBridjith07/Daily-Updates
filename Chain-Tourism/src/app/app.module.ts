@@ -1,33 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenusComponent } from './menus/menus.component';
-import { MainComponent } from './main/main.component';
-import { SliderComponent } from './slider/slider.component';
-import { TourBookComponent } from './tour-book/tour-book.component';
-import { TourAmenitiesComponent } from './tour-amenities/tour-amenities.component';
-import { TourSelectedComponent } from './tour-selected/tour-selected.component';
-
-
-
+import { FooterComponent } from './footer/footer.component';
+import { MenusModule } from './menus/menus.module';
+import { MainModule } from './main/main.module';
 @NgModule({
-  declarations: [
-    AppComponent,
-    MenusComponent,
-    MainComponent,
-    SliderComponent,
-    TourSelectedComponent,
-    TourBookComponent,
-    TourAmenitiesComponent
-    // routingComponents
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, FooterComponent],
+  bootstrap: [AppComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, MenusModule, MainModule],
 })
-export class AppModule { }
+export class AppModule {}

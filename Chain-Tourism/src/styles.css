@@ -1,19 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-*{
-    margin: 0;
+* {
+  margin: 0;
 }
-body{
-    &::-webkit-scrollbar {
-        height: 100%;
-        width: 15px;
-    }
+html,
+body {
+  height: 100%; /* Set height to 100% of the viewport */
+  width: 100%; /* Set width to 100% of the viewport */
+}
 
-    &::-webkit-scrollbar-track {
-        border: 2px solid #34485c;
-    }
+body {
+  &::-webkit-scrollbar {
+    height: 100%;
+    width: 10px;
+  }
 
-    &::-webkit-scrollbar-thumb {
-        background: #34485c;
-        border-radius: 50px;
-    }
+  &::-webkit-scrollbar-track {
+    border: 2px solid gray;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: blueviolet;
+  }
 }

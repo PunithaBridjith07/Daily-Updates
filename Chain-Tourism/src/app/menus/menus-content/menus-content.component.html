@@ -1,0 +1,7 @@
+<ul *ngFor="let tour of menuContent; let i = index">
+  <chainTour-menu-options
+    [name]="tour.tourType"
+    [about]="tour.description"
+    [image]="tour.image"
+  />
+</ul>

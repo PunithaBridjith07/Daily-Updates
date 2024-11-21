@@ -1,30 +1,24 @@
 <header>
-    <nav>
-        <div class="logo">
-            <img src="../assets/Logos/Logo.svg" alt="logo">
-        </div>
-        <ul class="menu">
-            <li class="trip">
-                <a href="">Trip</a>
-                <ul class="trip-content">
-                    <li *ngFor="let tour of toursList">
-                        <img src={{tour.image}} alt={{tour.tourType}}>
-                        <a routerLink="selectedTour"
-                            (click)="modifySelectedTour($event,tour.tourType)">{{tour.tourType}}
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="hotels">
-                <a href="">Hotels</a>
-            </li>
-            <li class="about">
-                <a href="">About us</a>
-            </li>
-        </ul>
-        <div class="authen">
-            <button>Register</button>
-            <a href="">Log in</a>
-        </div>
-    </nav>
+  <div class="logo">
+    <img src="../../assets/Logos/logo.png" alt="logo" />
+  </div>
+  <div class="menus">
+    <ul>
+      <li class="trip">
+        <a href="">Trip</a>
+        <chainTour-menus-content class="content" [menuContent]="toursMenu" />
+      </li>
+      <li>
+        <a href="">Hotels</a>
+        <!-- <chainTour-menus-content /> -->
+      </li>
+      <li>
+        <a href="">About</a>
+      </li>
+    </ul>
+  </div>
+  <div class="authen">
+    <button>Register</button>
+    <a href="">Log in</a>
+  </div>
 </header>

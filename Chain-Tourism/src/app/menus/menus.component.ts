@@ -1,21 +1,17 @@
-import { Component, Input, OnChanges, OnInit, Output, SimpleChanges, EventEmitter } from '@angular/core';
-import { tourList } from '../tourList';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { tourList } from '../tourList.model';
 
 @Component({
   selector: 'chainTour-menus',
   templateUrl: './menus.component.html',
   styleUrls: ['./menus.component.css']
 })
-export class MenusComponent implements OnInit, OnChanges {
-  @Input() toursList: tourList[] = [];
+export class MenusComponent {
+  @Input() toursMenu: tourList[] = [];
 
   @Output() selectTour = new EventEmitter<string>();
 
-  ngOnChanges(changes: SimpleChanges): void {
-  }
-  ngOnInit(): void {
-  }
-
+  /*
   modifySelectedTour(event: MouseEvent, tourName: string) {
     console.log(tourName);
 
@@ -23,5 +19,5 @@ export class MenusComponent implements OnInit, OnChanges {
     let selectTour: string = tourName;
     this.selectTour.emit(selectTour);
 
-  }
+  } */
 }

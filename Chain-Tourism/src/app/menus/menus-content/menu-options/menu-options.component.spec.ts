@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TourSelectedComponent } from './tour-selected.component';
+import { MenuOptionsComponent } from './menu-options.component';
 
-describe('TourSelectedComponent', () => {
-  let component: TourSelectedComponent;
-  let fixture: ComponentFixture<TourSelectedComponent>;
+describe('MenuOptionsComponent', () => {
+  let component: MenuOptionsComponent;
+  let fixture: ComponentFixture<MenuOptionsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TourSelectedComponent ]
+      declarations: [ MenuOptionsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TourSelectedComponent);
+    fixture = TestBed.createComponent(MenuOptionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

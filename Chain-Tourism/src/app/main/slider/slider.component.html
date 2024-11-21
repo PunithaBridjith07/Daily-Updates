@@ -1,0 +1,22 @@
+<div class="slider">
+  <button (click)="handlePreviousButton($event)">
+    <span>&#60;</span>
+  </button>
+  <button (click)="handleNextButton($event)">
+    <span>&#62;</span>
+  </button>
+  <section class="slider-image">
+    <h1 [class.active]="status">{{ tourType }}</h1>
+    <img [src]="bannerImage" [alt]="tourType" />
+  </section>
+  <section class="slider-about">
+    <article *ngFor="let banner of banner" [class.active]="status">
+      <img [src]="banner.imageUrl" [alt]="banner.cardName" />
+      <div>
+        <h3>{{ banner.cardHeading }}</h3>
+        <p>{{ banner.cardDescription }}</p>
+      </div>
+    </article>
+  </section>
+  <chainTour-loader *ngIf="bannerData" />
+</div>
