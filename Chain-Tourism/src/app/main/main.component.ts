@@ -7,17 +7,4 @@ import { AppdataService } from '../appdata.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
 })
-export class MainComponent implements OnInit {
-
-  ngOnInit(): void {
-    // this.filterBannerData();
-
-    throw new Error('Method not implemented.');
-  }
-  /* private filterBannerData(): void {
-    this.bannerData = this.appTourListDefaultData.tourListData
-      .filter((tour) => tour.banner.length !== 0)
-      .flatMap((tour) => [...tour.banner]);
-    console.log('bannerData has been updated:', this.bannerData);
-  } */
-}
+export class MainComponent{}

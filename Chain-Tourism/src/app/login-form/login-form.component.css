@@ -1,0 +1,54 @@
+:host {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #8a2be2;
+  height: 80%;
+  width: 100%;
+  max-width: 400px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  justify-content: center;
+}
+:host h1 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+  color: #8a2be2;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.form-group input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.form-group input[type="submit"] {
+    border-radius: 0px;
+  width: 50%;
+  background-color: #8a2be2;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+.form-group input[type="submit"]:hover {
+  opacity: 90%;
+}
+.form-group p {
+  text-align: center;
+}
+.form-group a {
+  color: #007bff;
+  text-decoration: none;
+}

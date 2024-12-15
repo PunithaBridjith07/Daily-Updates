@@ -1,15 +1,31 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { tourList } from '../tourList.model';
+import { AppdataService } from '../appdata.service';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'chainTour-menus',
   templateUrl: './menus.component.html',
-  styleUrls: ['./menus.component.css']
+  styleUrls: ['./menus.component.css'],
 })
 export class MenusComponent {
-  @Input() toursMenu: tourList[] = [];
+  readonly appService = inject(AppdataService);
+  // private TourList$ = new BehaviorSubject<tourList[]>([]);
+  selectedTours: tourList[] = [];
+  selectedTour: string = '';
 
-  @Output() selectTour = new EventEmitter<string>();
+  private TourList$: Observable<tourList[]> =
+    this.appService.tourList.asObservable();
+  /* constructor() {
+    this.TourList$.next(this.appService.tourList.getValue());
+    if (this.TourList$) {
+      console.log('tourlist$ recieved :', this.TourList$);
+    }
+  } */
+
+  get tourlist() {
+    return this.TourList$;
+  }
 
   /*
   modifySelectedTour(event: MouseEvent, tourName: string) {

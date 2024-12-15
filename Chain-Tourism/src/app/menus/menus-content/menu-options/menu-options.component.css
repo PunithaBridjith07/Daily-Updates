@@ -1,4 +1,4 @@
-li {
+/* {
   padding: 4px 0;
   height: 100px;
   width: 100%;
@@ -6,16 +6,16 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
+} */
 
-li img {
+img {
   height: 90px;
   width: 30%;
   padding: 2px;
   border-radius: 4px;
 }
 
-li div {
+div {
   padding: 2px;
   height: 90px;
   width: 70%;
@@ -24,17 +24,17 @@ li div {
   justify-content: space-around;
 }
 
-li div > a {
+div > a {
   color: black;
   text-decoration: none;
   font-size: larger;
   font-weight: lighter;
 }
 
-li div:hover > a {
+div:hover > a {
   color: blueviolet;
 }
 
-li div > p {
+div > p {
   font-size: medium;
 }

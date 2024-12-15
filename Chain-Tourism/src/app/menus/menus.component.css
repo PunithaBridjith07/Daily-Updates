@@ -50,7 +50,7 @@ header {
         border-top: 3px inset blueviolet;
       }
       &:hover > a {
-        color: blueviolet;
+        color: #8a2be2;
       }
     }
   }
@@ -85,6 +85,19 @@ header {
 
 .trip:hover .content {
   display: block;
+
+  & ul {
+    padding: 0;
+  }
+  & li {
+    padding: 4px 0;
+    height: 100px;
+    width: 100%;
+    box-shadow: 0 0 2.5px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .authen {

@@ -6,11 +6,29 @@
     <ul>
       <li class="trip">
         <a href="">Trip</a>
-        <chainTour-menus-content class="content" [menuContent]="toursMenu" />
+        <chainTour-menus-content class="content">
+          <ul>
+            <li
+              menuOptions
+              *ngFor="let tour of tourlist | async"
+              [name]="tour.tourType"
+              [about]="tour.description"
+              [image]="tour.image"
+            ></li>
+          </ul>
+        </chainTour-menus-content>
       </li>
       <li>
         <a href="">Hotels</a>
-        <!-- <chainTour-menus-content /> -->
+        <!-- <chainTour-menus-content>
+          <ul *ngFor="let tour of menuContent; let i = index">
+            <chainTour-menu-options
+              [name]="tour.tourType"
+              [about]="tour.description"
+              [image]="tour.image"
+            />
+          </ul>
+        </chainTour-menus-content> -->
       </li>
       <li>
         <a href="">About</a>

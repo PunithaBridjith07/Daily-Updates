@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { BehaviorSubject, combineLatest, map, Observable } from 'rxjs';
 import { AppdataService } from 'src/app/appdata.service';
 import { TourBanner } from 'src/app/tourList.model';
 
@@ -8,46 +9,48 @@ import { TourBanner } from 'src/app/tourList.model';
   styleUrls: ['./slider.component.css'],
 })
 export class SliderComponent {
-  readonly appSlideBannerData = inject(AppdataService);
+  readonly appService = inject(AppdataService);
 
-  bannerData: TourBanner[] = this.appSlideBannerData.bannerData;
-  activeSlide: number = 0;
-  numOfBanner: number = this.appSlideBannerData.bannerData.length;
-  get tourType() {
-    return this.bannerData[this.activeSlide].bannerName;
-  }
-  get bannerImage() {
-    return this.bannerData[this.activeSlide].bannerImage;
-  }
-  get banner() {
-    return this.bannerData[this.activeSlide].card;
-  }
-  get status():boolean {
-    return this.bannerData[this.activeSlide].status;
-  }
-  set setStatus(activeSlide: number) {
-    this.bannerData[activeSlide].status = !this.bannerData[activeSlide].status;
-  }
+  // Reactive state for the active slide
+  private activeSlide$ = new BehaviorSubject<number>(0);
+
+  // Banner data observable from the service
+  bannerData$: Observable<TourBanner[]> =
+    this.appService.bannersData.asObservable();
+
+  // Derived observables for the current banner's properties
+  bannerName$ = combineLatest([this.bannerData$, this.activeSlide$]).pipe(
+    map(
+      ([banners, activeSlide]) =>
+        banners[activeSlide]?.bannerName || 'Loading...'
+    )
+  );
+
+  bannerImage$ = combineLatest([this.bannerData$, this.activeSlide$]).pipe(
+    map(([banners, activeSlide]) => banners[activeSlide]?.bannerImage || '')
+  );
+
+  card$ = combineLatest([this.bannerData$, this.activeSlide$]).pipe(
+    map(([banners, activeSlide]) => banners[activeSlide]?.card || [])
+  );
+
+  // Navigation methods
   handlePreviousButton(e: Event) {
     e.preventDefault();
-
-    if (this.activeSlide > 0) {
-      this.setStatus = this.activeSlide;
-      console.log(this.activeSlide, this.status);
-      this.activeSlide--;
-      this.setStatus = this.activeSlide;
-      console.log(this.activeSlide, this.status);
+    const currentSlide = this.activeSlide$.getValue();
+    if (currentSlide > 0) {
+      this.activeSlide$.next(currentSlide - 1);
     }
   }
+
   handleNextButton(e: Event) {
     e.preventDefault();
-    if (this.activeSlide < this.numOfBanner - 1) {
-      this.setStatus = this.activeSlide;
-      console.log(this.activeSlide, this.status);
-      this.activeSlide++;
-      this.setStatus = this.activeSlide;
-      console.log(this.activeSlide, this.status);
-    }
+    this.bannerData$.subscribe((banners: TourBanner[]) => {
+      const currentSlide = this.activeSlide$.getValue();
+      if (currentSlide < banners.length - 1) {
+        this.activeSlide$.next(currentSlide + 1);
+      }
+    });
   }
 }
 

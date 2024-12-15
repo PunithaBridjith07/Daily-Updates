@@ -6,17 +6,17 @@
     <span>&#62;</span>
   </button>
   <section class="slider-image">
-    <h1 [class.active]="status">{{ tourType }}</h1>
-    <img [src]="bannerImage" [alt]="tourType" />
+    <h1>{{ bannerName$ | async }}</h1>
+    <img [src]="bannerImage$ | async" [alt]="bannerName$ | async" />
   </section>
   <section class="slider-about">
-    <article *ngFor="let banner of banner" [class.active]="status">
-      <img [src]="banner.imageUrl" [alt]="banner.cardName" />
+    <article *ngFor="let card of card$ | async">
+      <img [src]="card.imageUrl" [alt]="card.cardName" />
       <div>
-        <h3>{{ banner.cardHeading }}</h3>
-        <p>{{ banner.cardDescription }}</p>
+        <h3>{{ card.cardHeading }}</h3>
+        <p>{{ card.cardDescription }}</p>
       </div>
     </article>
   </section>
-  <chainTour-loader *ngIf="!bannerData" />
+  <chainTour-loader *ngIf="0" />
 </div>
