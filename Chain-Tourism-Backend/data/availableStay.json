@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "name": "Luxury Paradise",
+    "location": "New York, USA",
+    "mode_of_stay": "Luxury Travel",
+    "phone": "123-456-7890",
+    "rating": 4.9,
+    "image": "https://via.placeholder.com/150",
+    "info": "Indulgent experiences with premium services."
+  },
+  {
+    "id": 2,
+    "name": "Eco Retreat",
+    "location": "Boulder, Colorado, USA",
+    "mode_of_stay": "Sustainable Travel",
+    "phone": "987-654-3210",
+    "rating": 4.7,
+    "image": "https://via.placeholder.com/150",
+    "info": "Sustainable eco-lodging surrounded by nature."
+  },
+  {
+    "id": 3,
+    "name": "Adventure Haven",
+    "location": "Queenstown, New Zealand",
+    "mode_of_stay": "Adventure Travel",
+    "phone": "456-123-7890",
+    "rating": 4.8,
+    "image": "https://via.placeholder.com/150",
+    "info": "Thrilling outdoor adventures in scenic landscapes."
+  },
+  {
+    "id": 4,
+    "name": "Business Comfort Suites",
+    "location": "Tokyo, Japan",
+    "mode_of_stay": "Business Travel",
+    "phone": "321-987-6540",
+    "rating": 4.6,
+    "image": "https://via.placeholder.com/150",
+    "info": "Convenient and comfortable stay for professionals."
+  },
+  {
+    "id": 5,
+    "name": "Seaside Cruise Resort",
+    "location": "Miami, Florida, USA",
+    "mode_of_stay": "Cruise Travel",
+    "phone": "654-321-9870",
+    "rating": 4.5,
+    "image": "https://via.placeholder.com/150",
+    "info": "Luxury cruises with seaside views and gourmet dining."
+  },
+  {
+    "id": 6,
+    "name": "Urban Leisure Inn",
+    "location": "Paris, France",
+    "mode_of_stay": "Leisure Travel",
+    "phone": "789-456-1230",
+    "rating": 4.7,
+    "image": "https://via.placeholder.com/150",
+    "info": "Relax and rejuvenate in the heart of the city."
+  },
+  {
+    "id": 7,
+    "name": "Roadside Serenity Motel",
+    "location": "Route 66, Arizona, USA",
+    "mode_of_stay": "Road Trips",
+    "phone": "159-753-4862",
+    "rating": 4.3,
+    "image": "https://via.placeholder.com/150",
+    "info": "Perfect stopover for road trip enthusiasts."
+  },
+  {
+    "id": 8,
+    "name": "Eco Getaway",
+    "location": "Chiang Mai, Thailand",
+    "mode_of_stay": "Sustainable Travel",
+    "phone": "852-963-7410",
+    "rating": 4.8,
+    "image": "https://via.placeholder.com/150",
+    "info": "Stay amidst nature with eco-friendly amenities."
+  },
+  {
+    "id": 9,
+    "name": "Corporate Haven",
+    "location": "Singapore",
+    "mode_of_stay": "Business Travel",
+    "phone": "753-159-4862",
+    "rating": 4.5,
+    "image": "https://via.placeholder.com/150",
+    "info": "A business-friendly hotel with premium facilities."
+  },
+  {
+    "id": 10,
+    "name": "Cruise Bliss",
+    "location": "Santorini, Greece",
+    "mode_of_stay": "Cruise Travel",
+    "phone": "951-753-2584",
+    "rating": 4.7,
+    "image": "https://via.placeholder.com/150",
+    "info": "Experience the sea with luxury and style."
+  },
+  {
+    "id": 11,
+    "name": "Adrenaline Escape",
+    "location": "Cape Town, South Africa",
+    "mode_of_stay": "Adventure Travel",
+    "phone": "321-654-7890",
+    "rating": 4.9,
+    "image": "https://via.placeholder.com/150",
+    "info": "Unforgettable adventure activities and tours."
+  },
+  {
+    "id": 12,
+    "name": "Luxury Heights",
+    "location": "Dubai, UAE",
+    "mode_of_stay": "Luxury Travel",
+    "phone": "789-123-4560",
+    "rating": 4.9,
+    "image": "https://via.placeholder.com/150",
+    "info": "Experience luxury in the heart of the desert."
+  },
+  {
+    "id": 13,
+    "name": "EcoVillage Retreat",
+    "location": "Bali, Indonesia",
+    "mode_of_stay": "Sustainable Travel",
+    "phone": "654-987-1230",
+    "rating": 4.8,
+    "image": "https://via.placeholder.com/150",
+    "info": "Sustainable living with serene surroundings."
+  },
+  {
+    "id": 14,
+    "name": "Business Express Hotel",
+    "location": "London, UK",
+    "mode_of_stay": "Business Travel",
+    "phone": "963-852-7410",
+    "rating": 4.6,
+    "image": "https://via.placeholder.com/150",
+    "info": "Effortless convenience for business travelers."
+  },
+  {
+    "id": 15,
+    "name": "Adventure Peak",
+    "location": "Banff, Canada",
+    "mode_of_stay": "Adventure Travel",
+    "phone": "147-258-3690",
+    "rating": 4.8,
+    "image": "https://via.placeholder.com/150",
+    "info": "Hiking and adventure in the Canadian Rockies."
+  },
+  {
+    "id": 16,
+    "name": "Seaside Luxury Hotel",
+    "location": "Maldives",
+    "mode_of_stay": "Luxury Travel",
+    "phone": "753-258-9510",
+    "rating": 4.9,
+    "image": "https://via.placeholder.com/150",
+    "info": "Private villas on pristine beaches."
+  },
+  {
+    "id": 17,
+    "name": "Eco Safari Lodge",
+    "location": "Nairobi, Kenya",
+    "mode_of_stay": "Sustainable Travel",
+    "phone": "357-951-4562",
+    "rating": 4.7,
+    "image": "https://via.placeholder.com/150",
+    "info": "Eco-friendly lodge in the wild savannah."
+  },
+  {
+    "id": 18,
+    "name": "Corporate Suites",
+    "location": "Berlin, Germany",
+    "mode_of_stay": "Business Travel",
+    "phone": "852-147-9630",
+    "rating": 4.4,
+    "image": "https://via.placeholder.com/150",
+    "info": "Business suites with modern amenities."
+  },
+  {
+    "id": 19,
+    "name": "Adventure Base Camp",
+    "location": "Patagonia, Chile",
+    "mode_of_stay": "Adventure Travel",
+    "phone": "951-357-2580",
+    "rating": 4.8,
+    "image": "https://via.placeholder.com/150",
+    "info": "Base camp for thrilling outdoor adventures."
+  },
+  {
+    "id": 20,
+    "name": "Elegant City Stay",
+    "location": "Rome, Italy",
+    "mode_of_stay": "Leisure Travel",
+    "phone": "789-654-1230",
+    "rating": 4.6,
+    "image": "https://via.placeholder.com/150",
+    "info": "Immerse yourself in culture and elegance."
+  }
+]
