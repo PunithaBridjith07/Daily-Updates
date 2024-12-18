@@ -9,9 +9,10 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 export class AppdataService implements OnDestroy {
   private httpClient = inject(HttpClient);
   private subscription = new Subscription();
-  
+
   private TourList$ = new BehaviorSubject<tourList[]>([]);
   private bannerDataSubject$ = new BehaviorSubject<TourBanner[]>([]);
+  private selectedTourType = new BehaviorSubject<string>('');
 
   constructor() {
     this.fetchAppData(
@@ -40,12 +41,12 @@ export class AppdataService implements OnDestroy {
     const subscription = this.httpClient
       .get<{ data: tourList[] }>(URL)
       .subscribe({
-        next: (response) => {
-          if (Array.isArray(response.data)) {
-            this.TourList$.next(response.data);
+        next: (res) => {
+          if (Array.isArray(res.data)) {
+            this.TourList$.next(res.data);
             this.filterBannerData();
           } else {
-            console.error('Invalid data format from backend:', response.data);
+            console.error('Invalid data format from backend:', res.data);
           }
         },
         error: (err) => {
@@ -53,14 +54,13 @@ export class AppdataService implements OnDestroy {
         },
         complete: () => {
           if (this.TourList$) {
-            console.log('Data Recieved', this.TourList$);
+            console.log('Data Recieved', this.TourList$.getValue());
           }
         },
       });
     this.subscription.add(subscription);
   }
   ngOnDestroy(): void {
-    // Unsubscribe from all subscriptions
     this.subscription.unsubscribe();
   }
 }

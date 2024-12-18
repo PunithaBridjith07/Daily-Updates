@@ -1,4 +1,4 @@
 <main>
-  <chainTour-slider />
-  <chainTour-tour-selected />
+  <chainTour-slider *ngIf="staySelected==''" />
+  <chainTour-tour-selected *ngIf="staySelected!=''" />
 </main>
