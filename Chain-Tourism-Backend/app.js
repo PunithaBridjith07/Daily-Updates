@@ -21,9 +21,26 @@ app.use((req, res, next) => {
 app.get("/chain", async (req, res) => {
   // await new Promise((resolve) => setTimeout(resolve, 2000));
   const fileContent = await fs.readFile("./data/defaultAppData.json", "utf-8");
-  const defaultAppData = JSON.parse(fileContent);
-  res.status(200).json({ defaultAppData });
+  const data = JSON.parse(fileContent);
+
+  res.status(200).json({ data: data });
 });
+
+app.get("/chain/:name", async (req, res) => {
+  const name = req.params.name;
+
+  const fileContent = await fs.readFile('./data/availableStay.json', "utf-8");
+  const availableStay = JSON.parse(fileContent);
+  console.log("availableStay :", availableStay);
+
+  const data = availableStay.filter((stay) => stay.mode_of_stay === name)
+  if (!data) {
+    return res.status(404).json({ error: "Stay not found" });
+  }
+  console.log("data :", data);
+
+  res.status(200).json({ data: data })
+})
 
 app.use((req, res, next) => {
   if (req.method == "OPTIONS") {
