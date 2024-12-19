@@ -1,0 +1,33 @@
+div {
+    height: 100vh;
+    width: 100vw;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+}
+
+span {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 5em;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: larger;
+}
+
+button {
+    align-self: center;
+    font-size: 1em;
+    background-color: blueviolet;
+    border: none;
+    color: white;
+    height: 50px;
+    width: 200px;
+}

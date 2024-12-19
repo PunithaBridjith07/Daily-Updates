@@ -1,0 +1,36 @@
+<div>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <h2>Make Order</h2>
+        <!-- <hr> -->
+        <span>
+            <label for="itemId">Select Id </label>
+            <select name="itemId" id="itemId" [(ngModel)]="itemId" #itemID="ngModel" required>
+                <option *ngFor="let itemId of availItem" [value]="itemId.itemId">{{itemId.itemId}}</option>
+            </select><br><br>
+            <span>
+                <label for="quantity">quantity </label>
+                <input type="number" name="quantity" id="quantity" [disabled]="!itemID" #Quantity="ngModel"
+                    [(ngModel)]="quantity" required>
+            </span>
+            <span class="error-message" *ngIf="itemID.invalid && itemID.touched">Please Enter the itemId</span><br><br>
+        </span>
+        <span class="button">
+            <button (click)="onAddItem(itemId,quantity)">add Item</button>
+            <button type="submit" routerLink="bill">Generate Bill</button>
+        </span>
+    </form>
+    <div class="added-list">
+        <h2>Item Added</h2>
+        <span>
+            <ul>
+                <li *ngFor="let item of addedItem">
+                    <p>{{item.itemId}}</p>
+                    <p>{{item.price}}</p>
+                    <p>{{item.quantity}}</p>
+                    <button>X</button>
+                </li>
+            </ul>
+        </span>
+    </div>
+</div>
+<!-- *ngIf="addedItem.length>0" -->

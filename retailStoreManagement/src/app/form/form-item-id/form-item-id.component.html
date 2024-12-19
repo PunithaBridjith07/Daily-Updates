@@ -1,0 +1,12 @@
+<select name="itemId" id="itemId" #itemId="ngModel" ngModel required>
+    <option *ngFor="let itemId of availItem" [value]="itemId.itemId">{{itemId.itemId}}</option>
+</select><br><br>
+<span>
+    <label for="quantity">quantity </label>
+    <input type="number" name="quantity" id="quantity" disabled="" #quantity="ngModel" ngModel required>
+</span>
+<span>
+    <label for="price">Price </label>
+    <input type="number" disabled ngModel required>
+</span>
+<span class="error-message" *ngIf="itemId.invalid && itemId.touched">Please Enter the itemId</span><br><br>
