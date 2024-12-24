@@ -6,8 +6,11 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { BillComponent } from './bill/bill.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
-import { FormItemIdComponent } from './form/form-item-id/form-item-id.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DiscountPipe } from './bill/discount.pipe';
+import { PricePipe } from './bill/price.pipe';
+import { LoginComponent } from './login/login.component';
+import { RetailerComponent } from './retailer/retailer.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,16 @@ import { FormItemIdComponent } from './form/form-item-id/form-item-id.component'
     FormComponent,
     BillComponent,
     HomeComponent,
-    FormItemIdComponent
+    LoginComponent,
+    RetailerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    DiscountPipe,
+    PricePipe
   ],
   providers: [],
   bootstrap: [AppComponent]

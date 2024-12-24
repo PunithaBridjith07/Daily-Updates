@@ -1,7 +1,6 @@
 <div>
     <form #form="ngForm" (ngSubmit)="onSubmit(form)">
         <h2>Make Order</h2>
-        <!-- <hr> -->
         <span>
             <label for="itemId">Select Id </label>
             <select name="itemId" id="itemId" [(ngModel)]="itemId" #itemID="ngModel" required>
@@ -9,28 +8,27 @@
             </select><br><br>
             <span>
                 <label for="quantity">quantity </label>
-                <input type="number" name="quantity" id="quantity" [disabled]="!itemID" #Quantity="ngModel"
+                <input type="number" name="quantity" id="quantity" [disabled]="!itemId" #Quantity="ngModel"
                     [(ngModel)]="quantity" required>
-            </span>
-            <span class="error-message" *ngIf="itemID.invalid && itemID.touched">Please Enter the itemId</span><br><br>
+            </span><br><br>
+            <p class="error-message" *ngIf="ErrorMessage">
+                {{ErrorMessage}}
+            </p>
         </span>
         <span class="button">
-            <button (click)="onAddItem(itemId,quantity)">add Item</button>
-            <button type="submit" routerLink="bill">Generate Bill</button>
+            <button type="button" (click)="onAddItem(form)">add Item</button>
+            <button type="submit" routerLink="/bill" *ngIf="addedItem.length>0">Generate Bill</button>
         </span>
     </form>
-    <div class="added-list">
+    <div class="added-list" *ngIf="addedItem.length>0">
         <h2>Item Added</h2>
-        <span>
-            <ul>
-                <li *ngFor="let item of addedItem">
-                    <p>{{item.itemId}}</p>
-                    <p>{{item.price}}</p>
-                    <p>{{item.quantity}}</p>
-                    <button>X</button>
-                </li>
-            </ul>
-        </span>
+        <ul>
+            <li *ngFor="let item of addedItem">
+                <p>Id: {{item.itemId}}</p>
+                <p>Price: {{item.price}}</p>
+                <p>Quantity: {{item.quantity}}</p>
+                <button (click)="onDeleteItem(item.itemId)">&#10006;</button>
+            </li>
+        </ul>
     </div>
 </div>
-<!-- *ngIf="addedItem.length>0" -->

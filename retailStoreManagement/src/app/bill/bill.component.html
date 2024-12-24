@@ -1,10 +1,31 @@
-<span>
-    <label for="description">Description</label>
-    <section name="description">
-        <article>
-            <p>Cost:</p><br>
-            <p>Discount applied:</p>
-            <p>Total Amount:</p>
-        </article>
-    </section><br><br>
-</span>
+<div class="bill">
+    <div>
+        <h2>Retail Bill</h2>
+        <table>
+            <thead>
+                <tr>
+                    <td>Item ID</td>
+                    <td>Quantity</td>
+                    <td>Discount</td>
+                    <td>Price</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orderList">
+                    <td>{{order.itemId}}</td>
+                    <td>{{order.quantity}}</td>
+                    <td>{{order.discount|discount:'status'}}</td>
+                    <td>{{order.price}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td colspan="2">Total :</td>
+                    <td>{{amountToPay|price:'total'}}</td>
+                </tr>
+            </tfoot>
+        </table>
+        <p>Welcome! back🥰🤝, Soon</p>
+    </div>
+</div>

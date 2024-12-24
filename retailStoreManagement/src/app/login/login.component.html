@@ -1,0 +1,16 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h2>Login</h2>
+        <span>
+            <label for="email">email</label>
+            <input type="text" name="email" formControlName="email" required><br>
+            <p *ngIf="form.controls.email.invalid&&form.controls.email.touched&&form.controls.email.dirty">Email already exist</p>
+            <label for="password">password</label>
+            <input type="password" name="password" formControlName="password" required><br>
+            <p *ngIf="form.controls.password.invalid&&form.controls.password.touched&&form.controls.password.dirty">Email already exist</p>
+        </span>
+        <span>
+            <button type="submit">Login</button>
+        </span>
+    </form>
+</div>

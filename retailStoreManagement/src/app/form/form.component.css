@@ -1,3 +1,96 @@
+/* div {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    align-self: center;
+}
+
+form {
+    border: 2px solid blueviolet;
+    border-radius: 10px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 55%;
+    width: 25%;
+}
+
+span {
+    align-self: center;
+}
+
+.error-message {
+    text-align: center;
+    color: red;
+}
+
+.button {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.button>button {
+    height: 40px;
+    background-color: blueviolet;
+    border: none;
+    color: white;
+}
+
+.added-list {
+    border: 5px solid rgb(80, 0, 145);
+    border-radius: 10px;
+    align-self: center;
+    height: 50%;
+    width: 25%;
+    display: inline;
+    flex-direction: column;
+}
+
+.added-list>h2 {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+
+.added-list>ul {
+    background-color: rgb(140, 0, 255);
+    height: 80%;
+    width: 100%;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.added-list>ul>li {
+    border: 5px solid rgb(140, 0, 255);
+    background-color: white;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.added-list>ul>li p {
+    align-self: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button {
+    align-self: center;
+    color: red;
+    height: 20px;
+    border: none;
+    background: none;
+} */
 div {
     height: 100vh;
     width: 100vw;
@@ -24,10 +117,14 @@ span {
     align-self: center;
 }
 
+.error-message {
+    text-align: center;
+    color: red;
+}
+
 .button {
     width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     gap: 10px;
 }
@@ -37,20 +134,60 @@ span {
     background-color: blueviolet;
     border: none;
     color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.button>button:hover {
+    background-color: indigo;
 }
 
 .added-list {
-    background-color: rgb(204, 200, 200);
+    border: 5px solid rgb(80, 0, 145);
     border-radius: 10px;
     align-self: center;
     height: 50%;
     width: 25%;
-    display: block;
-    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .added-list>h2 {
-    margin-top: 20px;
-    margin-left: 20px;
-    /* padding: 5px; */
+    margin: 15px;
+}
+
+.added-list>ul {
+    background-color: rgb(140, 0, 255);
+    height: 80%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.added-list>ul>li {
+    border: 5px solid rgb(140, 0, 255);
+    background-color: white;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.added-list>ul>li p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button {
+    color: red;
+    height: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+button:hover {
+    color: darkred;
 }

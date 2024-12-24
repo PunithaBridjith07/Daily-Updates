@@ -1,7 +1,6 @@
 div {
-    height: 100vh;
+    height: 80vh;
     width: 100vw;
-    /* background-color: blue; */
     display: flex;
     justify-content: center;
 }

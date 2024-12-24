@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FormDataService } from './form-data.service';
 import { itemAdded, productAgenda } from './form.model';
@@ -14,59 +14,55 @@ export class FormComponent {
 
   //properties
   private formAvailData!: productAgenda[]
-  private itemAdded!: itemAdded[]
+  private itemAdded: itemAdded[] = []
   itemId!: number;
   quantity!: number;
-  price: number = 0;
+  ErrorMessage: string = ''
 
-  //methods
   constructor() {
     this.formAvailData = this.formDataService.productAvailableData
     if (this.formAvailData) {
       console.log("formAvailData Received: ", this.formAvailData);
     }
-    this.itemAdded = this.formDataService.addedItem
+    setInterval(() =>
+      this.itemAdded = this.formDataService.addedItem, 1500)
   }
 
+  //methods
   get availItem() {
     return this.formAvailData
   }
   get addedItem() {
     return this.itemAdded
   }
-  set itemPrice(itemId: number) {
-    let filterData;
-    filterData = this.formAvailData.find((item) => item.itemId === itemId)
-    this.price = Number(filterData?.price)
-  }
-
-  onAddItem(itemId: number, quantity: number, discount: number = 20) {
-    this.itemPrice = Number(itemId);
-    let totalPrice: number;
-    let currentPrice: number = Number(this.price) * Number(quantity);
+  onAddItem(form: NgForm) {
     let addItem: itemAdded;
-
-    if (itemId === 5004 || itemId === 5005) {
-      totalPrice = currentPrice - ((currentPrice / 100) * discount);
-      addItem = {
-        itemId: Number(this.itemId),
-        price: totalPrice,
-        quantity: this.quantity,
-        discount: discount
-      }
-    } else {
-      addItem = {
-        itemId: Number(this.itemId),
-        price: currentPrice,
-        quantity: this.quantity,
-        discount: discount
-      }
+    if (this.quantity <= 0 || this.quantity === undefined) {
+      this.ErrorMessage = "at-least one item must added"
+      return
     }
+    const foundItem = this.formAvailData.find((item) => item.itemId === Number(this.itemId));
 
-    this.itemId = 0
-    this.quantity = 0
-    this.price = 0
-    this.formDataService.onAddItem(addItem);
+    if (foundItem) {
+      addItem = {
+        userId: 2,
+        itemId: Number(this.itemId),
+        price: foundItem.price,
+        quantity: this.quantity,
+        discount: foundItem.discount
+      }
+
+      this.formDataService.onAddItem(addItem);
+      form.controls['itemId'].reset()
+      form.controls['quantity'].reset()
+      this.ErrorMessage = ''
+    } else {
+      console.log("not foundItem");
+
+    }
+  }
+  onDeleteItem(itemId: number) {
+    this.formDataService.onDeleteAddedItem(itemId);
   }
   onSubmit(form: NgForm) {
     console.log("Form Submitted💖");
